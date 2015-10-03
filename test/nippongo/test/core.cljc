@@ -6,6 +6,7 @@
 (deftest test-hiragana?
   (testing "hiragana? should be true"
     (are [x] (n/hiragana? x)
+      \a
       \あ
       \か
       \さ
