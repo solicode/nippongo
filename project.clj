@@ -4,5 +4,14 @@
   :license {:name "Eclipse Public License"
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :main nippongo.core
-  :dependencies [[org.clojure/clojure "1.6.0"]]
+  :dependencies [[org.clojure/clojure "1.7.0"]
+                 [org.clojure/clojurescript "1.7.48"]]
+  :plugins [[lein-cljsbuild "1.1.0"]]
+  :cljsbuild {:builds        [{:id           "test"
+                               :source-paths ["src" "test"]
+                               :compiler     {:output-to     "target/cljs/test-runner.js"
+                                              :output-dir    "target/cljs"
+                                              :target        :nodejs
+                                              :optimizations :simple}}]
+              :test-commands {"test" ["node" "target/cljs/test-runner.js"]}}
   :profiles {:dev {:dependencies [[criterium "0.4.3"]]}})

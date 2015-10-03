@@ -1,16 +1,17 @@
-(ns nippongo.core-test
-  (:require [clojure.test :refer :all]
-            [nippongo.core :refer :all]))
+(ns nippongo.test.core
+  (:require [nippongo.core :as n]
+    #?(:cljs [cljs.test :as t :refer-macros [deftest is are testing]]
+       :clj [clojure.test :as t :refer [deftest is are testing]])))
 
 (deftest test-hiragana?
   (testing "hiragana? should be true"
-    (are [x] (hiragana? x)
+    (are [x] (n/hiragana? x)
       \あ
       \か
       \さ
       "あかさたなはまやらわをん"))
   (testing "hiragana? should be false"
-    (are [x] (not (hiragana? x))
+    (are [x] (not (n/hiragana? x))
       \a
       \z
       \1
