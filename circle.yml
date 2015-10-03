@@ -5,5 +5,5 @@ machine:
 test:
   override:
     - lein do clean, cljsbuild once
-    - lein test
-    - node target/cljs/test-runner.js
+    - lein test nippongo.test.core
+    - lein cljsbuild test
