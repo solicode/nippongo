@@ -6,4 +6,5 @@ test:
   override:
     - lein do clean, cljsbuild once
     - lein test
-    - lein cljsbuild test
+    - node --version
+    - node target/cljs/test-runner.js
