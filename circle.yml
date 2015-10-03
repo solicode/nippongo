@@ -2,6 +2,10 @@ machine:
   java:
     version: oraclejdk8
 
+dependencies:
+  pre:
+    - sudo apt-get install leiningen
+
 test:
   override:
-    - lein do clean, test, cljsbuild once, cljsbuild test
+    - lein do clean, version, test, cljsbuild once, cljsbuild test
