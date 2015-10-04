@@ -1,4 +1,4 @@
-Nippongo
+Nippongo [![Circle CI](https://circleci.com/gh/solicode/nippongo.svg?style=svg)](https://circleci.com/gh/solicode/nippongo)
 ========
 
 A library with assorted functions for processing Japanese text.
