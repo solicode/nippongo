@@ -4,6 +4,5 @@ machine:
 
 test:
   override:
-    - lein do clean, cljsbuild once
-    - lein test nippongo.test.core
+    - lein do clean, test nippongo.test.core
     - lein cljsbuild test
