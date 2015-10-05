@@ -14,4 +14,5 @@
                                               :target        :nodejs
                                               :optimizations :simple}}]
               :test-commands {"test" ["node" "target/cljs/test-runner.js"]}}
-  :profiles {:dev {:dependencies [[criterium "0.4.3"]]}})
+  :profiles {:dev {:jvm-opts ["-XX:-OmitStackTraceInFastThrow"]
+                   :dependencies [[criterium "0.4.3"]]}})
