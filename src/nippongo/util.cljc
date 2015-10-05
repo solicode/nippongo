@@ -30,7 +30,7 @@
            (.append buffer (f (aget s i))))
          (.toString buffer)))))
 
-(defn every-char? [pred s]
+(defn every-char? [pred ^String s]
   (let [length (count s)]
     (loop [i 0]
       (if (= i length)
@@ -39,7 +39,7 @@
           (recur (inc i))
           false)))))
 
-(defn some-char? [pred s]
+(defn some-char? [pred ^String s]
   (let [length (count s)]
     (loop [i 0]
       (if (= i length)
