@@ -21,4 +21,18 @@
       \。
       \!)))
 
+(deftest test-romaji->hiragana
+  (testing "romaji should convert to hiragana"
+    (are [x expected] (= (n/romaji->hiragana x) expected)
+      "shinjuku" "しんじゅく"
+      "sinjuku" "しんじゅく"
+      "fuujin" "ふうじん"
+      "raijin" "らいじん"
+      "nihongo" "にほんご"))
+  (testing "should not convert capital letters, numbers, symbols, non-romaji, etc."
+    (are [x expected] (= (n/romaji->hiragana x) expected)
+      "MEGURO" "MEGURO"
+      "GOOD JOB desu" "GOOD JOB です"
+      "iikuni (1192) tsukurou kamakurabakufu" "いいくに (1192) つくろう かまくらばくふ")))
+
 ; TODO: Add tests for all other functions

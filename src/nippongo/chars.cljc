@@ -1,5 +1,5 @@
 (ns nippongo.chars
-  #?(:clj (:require [nippongo.util :refer :all]))
+  #?(:clj (:require [nippongo.util :refer [char-code in?]]))
   #?(:cljs (:require [nippongo.util :refer [char-code] :refer-macros [in?]])))
 
 (defn hiragana? [c]
