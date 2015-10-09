@@ -28,6 +28,10 @@
 (defn kanji? [c]
   (<= 0x4E00 (char-code c) 0x9FCC))
 
+(defn japanese? [c]
+  (boolean (or (kana? c)
+               (kanji? c))))
+
 (defn half-width-lowercase-letter? [c]
   (<= (char-code \a) (char-code c) (char-code \z)))
 
