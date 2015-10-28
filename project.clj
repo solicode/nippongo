@@ -5,7 +5,7 @@
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :main nippongo.core
   :dependencies [[org.clojure/clojure "1.7.0"]
-                 [org.clojure/clojurescript "1.7.48"]]
+                 [org.clojure/clojurescript "1.7.145"]]
   :aliases {"test-all" ["do" "clean," "test," "cljsbuild" "test"]}
   :plugins [[lein-cljsbuild "1.1.0"]]
   :cljsbuild {:builds        [{:id           "test"
